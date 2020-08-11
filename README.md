@@ -11,7 +11,7 @@ Currently it contains:-
 For any Query and Suggestion Feel Free to contact at - nikhilchachan111@gmail.com
 
 ### It contains Beautiful Dark Theme as UI. 
-**Available on Firebase: https://algo-project-f841e.firebaseapp.com/ **
+Available on Firebase: https://algo-project-f841e.firebaseapp.com/
 
 
 Started as a Team project for College. Now Adding more near future...
