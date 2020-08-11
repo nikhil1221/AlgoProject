@@ -1,5 +1,5 @@
 # AlgoProject
-# Virtual Implementation of Dynamic Programming Algos#
+# Virtual Implementation of Dynamic Programming Algos
 Currently it contains:-
 ### All pair Shortest Path
 ### Assembly line Scheduling
