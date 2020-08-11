@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.slim.min.js">
+    </script>
+
+		<script src="js/wow.min.js"></script>
+    <script>
+              new WOW().init();
+              </script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/javascript.js">
+    </script>
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+
+<link rel="stylesheet" type="text/css" href="css/indexstyle.css">
+
+      <title>Project</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="index.html">Main</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="#all">All pair shortest path <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#line">Assembly-line scheduling</a>
+      <a class="nav-item nav-link" href="#matrix">Matrix-chain multiplication</a>
+      <a class="nav-item nav-link" href="#longest">Longest common subsequence</a>
+      <a class="nav-item nav-link" href="#knapsack">0/1 knapsack</a>
+    </div>
+  </div>
+</nav>
+      <div class="jumbotron">
+        <h1 align="center">Dynamic Programming</h1>
+      </div>
+
+<section id="all" class="wow fadeIn">
+  <div class="jumbotron pair">
+<h5 class="wow bounceInUp">All Pair shortest path</h5>
+<p>The problem is to find shortest distances between every pair of vertices in a given edge weighted directed Graph.
+  The Graph is represented as Adjancency Matrix, and the Matrix denotes the weight of the edegs (if it exists) else INF.
+</p>
+<p>
+<span>Input:</span>
+<br>
+The first line contains an integer V denoting the size of the adjacency matrix(Starting with 0 as the initial name of the Vertex). The next V lines contain V space separated values of the matrix (graph). All input will be integer type.
+</p>
+
+
+<div class="input-group mb-3">
+  <input type="number" min="0"class="form-control" id="vertex" placeholder="Enter Number of vertices (V)" aria-label="Recipient's username" aria-describedby="button-addon2">
+
+</div>
+<div class="input-group mb-3">
+  <input type="text" class="form-control" id="edge" placeholder="Enter (source destination length)" aria-label="Recipient's username" aria-describedby="button-addon2">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" onclick="all_pair()" type="button">proceed</button>
+  </div>
+</div>
+
+
+<h5> <span id="allout"></span> </h5> <p> <span id="pairout"></span> </p>
+  </div>
+</section>
+
+<section id="line" class="wow fadeIn">
+  <div class="jumbotron">
+<h5 class="wow bounceInUp">Assembly line Scheduling</h5>
+
+<p>A car factory has two assembly lines, each with n stations. A station is denoted by Si,j where i is either 1 or 2 and indicates the assembly line the station is on, and j indicates the number of the station. The time taken per station is denoted by ai,j. Each station is dedicated to some sort of work like engine fitting, body fitting, painting and so on. So, a car chassis must pass through each of the n stations in order before exiting the factory. The parallel stations of the two assembly lines perform the same task. After it passes through station Si,j, it will continue to station Si,j+1 unless it decides to transfer to the other line. Continuing on the same line incurs no extra cost, but transferring from line i at station j – 1 to station j on the other line takes time ti,j. Each assembly line takes an entry time ei and exit time xi which may be different for the two lines.</p>
+<p>
+<span>Input:</span>
+<br>
+Enter the number of assembly lines (n) first line. Array e and array x in next line the initial input and output.
+Then next two lines with the time taken in production with n space integer followed by two lines for transfer the input form one assembly line to other with n spaced integer.
+</p>
+
+<div class="input-group mb-3">
+  <input type="number" min="0" value="0"class="form-control" id="lines" placeholder="Number of lines" aria-label="Recipient's username" aria-describedby="button-addon2">
+</div>
+
+<div class="input-group mb-3">
+  <input type="text" class="form-control" id="number" placeholder="Initial 2 assembly line input" aria-label="Recipient's username" aria-describedby="button-addon2">
+  <input type="text" class="form-control" id="maximum" placeholder="Final 2 assembly line input" aria-label="Recipient's username" aria-describedby="button-addon2">
+</div>
+
+<div class="input-group mb-3">
+  <input type="text" class="form-control" id="line1" placeholder="1st line Production timing" aria-label="Recipient's username" aria-describedby="button-addon2">
+</div>
+<div class="input-group mb-3">
+  <input type="text" class="form-control" id="line2" placeholder="2nd line production timing" aria-label="Recipient's username" aria-describedby="button-addon2">
+</div>
+
+
+<div class="input-group mb-3">
+  <input type="text" class="form-control" id="cross1" placeholder="cross sending from 1st to 2nd" aria-label="Recipient's username" aria-describedby="button-addon2">
+</div>
+<div class="input-group mb-3">
+  <input type="text" class="form-control" id="cross2" placeholder="Cross sending form 2nd to 1st" aria-label="Recipient's username" aria-describedby="button-addon2">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" onclick="assembly_line()" type="button">proceed</button>
+  </div>
+</div>
+
+
+<h5> <span id="lineout"></span> </h5>
+  </div>
+</section>
+
+<section id="matrix" class="wow fadeIn">
+  <div class="jumbotron">
+<h5 class="wow bounceInUp">Matrix Chain Multiplication</h5>
+
+<p>Given a sequence of matrices,
+find the most efficient way to multiply these matrices together.
+The problem is not actually to perform the multiplications,
+but merely to decide in which order to perform the multiplications.
+There are many options to multiply a chain of matrices because matrix multiplication is associative i.e.
+no matter how one parenthesize the product, the result will be the same.
+</p>
+<p>
+<span>Input:</span>
+<br>
+The first line contains an integer N, denoting the number of elements in the array.
+Then next line contains N space separated integers denoting the values of the element in the array.
+</p>
+
+
+<div class="input-group mb-3">
+  <input type="number" min="0" class="form-control" id="numbers" placeholder="Enter Number of elements" aria-label="Recipient's username" aria-describedby="button-addon2">
+
+</div>
+<div class="input-group mb-3">
+  <input type="text" class="form-control" id="array" placeholder="Enter index of matrix in order (separated by spaces)" aria-label="Recipient's username" aria-describedby="button-addon2">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" onclick="matrix()" type="button">proceed</button>
+  </div>
+</div>
+
+
+<h5> <span id="matout"></span> </h5>
+
+  </div>
+</section>
+
+<section id="longest" class="wow fadeIn">
+  <div class="jumbotron">
+<h4 class="wow bounceInUp">Longest Comman Subsequence</h4>
+
+<p>Given two sequences, find the length of longest subsequence present in both of them. Both the strings are of uppercase.
+</p>
+<p>
+<span>Input:</span>
+<br>
+Enter 2 space separated integers A and B denoting the size of string str1 and str2 respectively
+The next two lines contains the 2 string str1 and str2 .</p>
+
+
+<div class="input-group mb-3">
+  <input type="number" min="0" class="form-control" id="len1" placeholder="Enter length of first string" aria-label="Recipient's username" aria-describedby="button-addon2">
+  <input type="number" min="0" class="form-control" id="len2" placeholder="Enter length of second string" aria-label="Recipient's username" aria-describedby="button-addon2">
+
+</div>
+<div class="input-group mb-3">
+  <input type="text" class="form-control" id="string1" placeholder="Enter The quantity of each" aria-label="Recipient's username" aria-describedby="button-addon2">
+
+</div>
+<div class="input-group mb-3">
+  <input type="text" class="form-control" id="string2" placeholder="Enter the weight corresponds to each quantity" aria-label="Recipient's username" aria-describedby="button-addon2">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" onclick="longest()" type="button">proceed</button>
+  </div>
+</div>
+
+<h5> <span id="longout"></span> </h5>
+
+  </div>
+</section>
+
+<section id="knapsack" class="wow fadeIn">
+
+  <div class="jumbotron">
+<h4 class="wow bounceInUp">0/1 knapsack</h4>
+
+<p>You are given weights and values of N items, put these items in a knapsack of capacity W to get the maximum total value in the knapsack.
+In other words, given two integer arrays val[0..N-1] and wt[0..N-1] which represent values and weights associated with N items respectively.
+Also given an integer W which represents knapsack capacity,
+find out the maximum value subset of val[] such that sum of the weights of this subset is smaller than or equal to W.
+You cannot break an item,
+either pick the complete item, or don’t pick it (0-1 property).</p>
+<p>
+<span>Input:</span>
+<br>
+Enter 2 numbers first the number of items and second the maximum capacity of the knapsack.
+In the next line are N space separated positive integers denoting the values of the N items,
+and in the next line are N space separated positive integers denoting the weights of the corresponding items.</p>
+
+<div class="input-group mb-3">
+  <input type="number" min="0" class="form-control" id="numb" placeholder="Enter Number of elements" aria-label="Recipient's username" aria-describedby="button-addon2">
+  <input type="number" min="0" class="form-control" id="maximums" placeholder="Enter Weight you want to find" aria-label="Recipient's username" aria-describedby="button-addon2">
+
+</div>
+<div class="input-group mb-3">
+  <input type="text" class="form-control" id="quantity" placeholder="Enter The quantity of each" aria-label="Recipient's username" aria-describedby="button-addon2">
+
+</div>
+<div class="input-group mb-3">
+  <input type="text" class="form-control" id="weight" placeholder="Enter the weight corresponds to each quantity" aria-label="Recipient's username" aria-describedby="button-addon2">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary"  onclick="knapsack()" type="button">proceed</button>
+  </div>
+</div>
+
+<h5 > <span id="knapout"></span> </h5>
+  </div>
+</section>
+
+  </body>
+</html>
